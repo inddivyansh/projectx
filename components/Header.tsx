@@ -14,7 +14,7 @@ const navLinks = [
         <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z" />
       </svg>
     ),
-    text: "Who am i?",
+    text: "About Me",
   },
   {
     url: "#projects",
@@ -33,7 +33,7 @@ const navLinks = [
         <path d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z" />
       </svg>
     ),
-    text: "Blog",
+    text: "Education",
   },
   {
     url: "#contact",
@@ -90,13 +90,13 @@ const Header: React.FC = () => {
         )}`}
       >
         <div className="w-full h-full mx-auto max-w-6xl flex items-center justify-between">
-          <Link
-            href="/"
+            <Link
+            href={process.env.NEXT_PUBLIC_URL || "/"}
             className="text-xl sm:text-2xl md:hover:text-marrsgreen dark:md:hover:text-carrigreen focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen"
-          >
-            SatNaing
-            <span className="text-marrsgreen dark:text-carrigreen">.dev</span>
-          </Link>
+            >
+            diivyportfolio
+            <span className="text-marrsgreen dark:text-carrigreen">.vercel.app</span>
+            </Link>
           <nav className="flex items-center">
             <div className="glassmorphism md:bg-transparent md:dark:bg-transparent md:backdrop-blur-none fixed md:static bottom-4 z-30 left-1/2 md:left-auto transform -translate-x-1/2 md:transform-none bg-bglight dark:bg-carddark dark:text-textlight w-11/12 rounded drop-shadow-lg md:drop-shadow-none">
               <ul className="flex justify-evenly items-center py-1">

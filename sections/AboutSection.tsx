@@ -119,9 +119,10 @@ const AboutSection: React.FC = () => {
               <h2 className="section-heading">Who am I?</h2>
             </RoughNotation>
           </div>
-          <div className="md:grid grid-rows-5 lg:grid-rows-6 grid-cols-5">
-            <div className="col-start-1 col-end-3 row-start-1 row-end-4 lg:row-end-7 lg:col-start-1 lg:col-end-3 flex justify-center items-center py-4 lg:mb-[20%]">
-              <div className="relative w-72">
+          <div className="md:grid grid-cols-5 grid-rows-1 gap-8 items-center">
+            {/* Profile Picture */}
+            <div className="col-span-2 flex justify-center items-center py-4">
+              <div className="relative w-80">
                 <svg
                   width="96"
                   height="21"
@@ -136,10 +137,10 @@ const AboutSection: React.FC = () => {
                 <div className="profile-picture overflow-hidden md:overflow-visible rounded-md md:shadow-2xl">
                   <Image
                     src={satNaing}
-                    width={1700}
-                    height={1790}
+                    width={1900} // increased from 1700
+                    height={2000} // increased from 1790
                     priority
-                    alt="Sat Naing profile picture"
+                    alt="Divyansh Nagar profile picture"
                     className="rounded-md"
                   />
                 </div>
@@ -168,22 +169,21 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            <p className="col-start-1 col-end-3 row-start-4 row-end-6 lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-6 lg:ml-8 lg:mt-auto about-intro">
-              With 4+ years of comprehensive experience in web application
-              development, I have polished my skills in both frontend and
-              backend development. In addition to my hands-on experience in web
-              development, my education has also played a critical role in
-              providing a strong foundation for my career.
-            </p>
-
-            <div
-              className="col-start-3 col-end-6 row-start-1 row-end-6 lg:row-start-2 lg:row-end-7 md:ml-8 place-content-end"
-              ref={eduRef}
-            >
-              <p className="edu-bg my-4">Here is my educational background.</p>
-              {educationInfo.map((edu) => (
-                <EduGroup edu={edu} key={edu.id} />
-              ))}
+            {/* Intro Text */}
+            <div className="col-span-3 about-intro lg:ml-8">
+              <p>
+              I’ve been on a journey of continuous learning and hands-on tech exploration, 
+              building a solid foundation in computer science through both theory and practice. 
+              From studying core subjects to working on side projects, hackathons and certifications, 
+              I’m shaping my path toward impactful and intelligent tech solutions. 
+              My education has helped me think critically, code better, and grow as a future tech professional.
+              </p>
+              <div className="mt-6">
+                <p className="edu-bg my-4">Here is my educational background.</p>
+                {educationInfo.map((edu) => (
+                  <EduGroup edu={edu} key={edu.id} />
+                ))}
+              </div>
             </div>
           </div>
         </RoughNotationGroup>
@@ -197,28 +197,43 @@ const AboutSection: React.FC = () => {
 const educationInfo = [
   {
     id: 1,
-    title: "B.Sc (Hons) in Computing",
-    subTitle: "Edinburgh Napier University | 2018 ~ 2019",
+    title: "B.Tech in Computer Science & Engineering",
+    subTitle: "Indian Institute of Information Technology, Pune | 2023 ~ 2027",
+    subTitleLink: process.env.NEXT_PUBLIC_IIIT_PUNE_LINK,
     list: [
-      "Studied computer science, software development, DevOps",
-      "Graduated with First Class Honours",
-      "Got merit in 7 modules out of 9",
+      " Studying Data Structures, Operating Systems, Computer Networks, Machine Learning, and Cybersecurity",
+      "Actively working on  projects and open-source contributions",
+      "Engaged in technical communities and hackathons for practical exposure",
     ],
   },
   {
     id: 2,
-    title: "HND in Computing & System Development",
-    subTitle: "Info Myanmar University | 2016 - 2018",
+    title: "Education Gap",
+    subTitle: "Allen Career Institute | 2022 – 2023",
+    subTitleLink: process.env.NEXT_PUBLIC_ALLEN_LINK,
     list: [
-      "Studied modules specializing in software development",
-      "Passed HND with overall Merit",
+      "Took a dedicated gap year to fully focus on securing admission to a top engineering college through JEE, preparing aggressively with round-the-clock study and commitment.",
     ],
   },
   {
     id: 3,
-    title: "IELTS",
-    subTitle: "British Council Myanmar | 2017",
-    list: ["Got overall band score 6.5."],
+    title: "Senior Secondary Education",
+    subTitle: "Nalanda Academy | 2021 – 2022",
+    subTitleLink: process.env.NEXT_PUBLIC_NALANDA_LINK,
+    list: [
+      "Class 12 (PCM) – Scored 84.8%.",
+      "Focused on problem-solving and preparation for JEE, India’s premier engineering entrance exam.",
+    ],
+  },
+  {
+    id: 4,
+    title: "Secondary Education",
+    subTitle: "Nalanda Academy | 2019 – 2020",
+    subTitleLink: process.env.NEXT_PUBLIC_NALANDA_LINK,
+    list: [
+      "Class 10 – Scored 89.6%.",
+      "Figuring out my interests and strengths.",
+    ],
   },
 ];
 

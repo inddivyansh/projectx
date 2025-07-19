@@ -67,20 +67,26 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
   useEffect(() => {
     let ignore = false;
     async function fetchData() {
-      const response = await fetch(project.githubApi);
-      const data = await response.json();
-      const stargazersCount = data.stargazers_count;
-      const stargazersUrl = data.stargazers_url;
+      if (!project.githubApi) return; // Don't fetch if URL is missing
+      try {
+        const response = await fetch(project.githubApi);
+        if (!response.ok) throw new Error("Network response was not ok");
+        const data = await response.json();
+        const stargazersCount = data.stargazers_count;
+        const stargazersUrl = data.stargazers_url;
 
-      if (stargazersCount && stargazersUrl && !ignore) {
-        setStarCount(stargazersCount);
-        setStarCountUrl(stargazersUrl);
+        if (stargazersCount && stargazersUrl && !ignore) {
+          setStarCount(stargazersCount);
+          setStarCountUrl(stargazersUrl);
+        }
+      } catch (err) {
+        setStarCount(undefined);
+        setStarCountUrl(undefined);
+        // Optionally log error: console.error(err);
       }
     }
-
     fetchData();
-
-    () => {
+    return () => {
       ignore = true;
     };
   }, [project.githubApi]);

@@ -21,23 +21,23 @@ type Props = {
 
 export const meta = {
   description:
-    "Sat Naing is a full-stack developer based in Yangon, Myanmar. He is passionate about writing codes and developing web applications to solve real-life challenges.",
-  author: "Sat Naing",
+    "Divyansh Nagar is a prefinal year B.Tech Computer Science student at IIIT Pune, passionate about Cybersecurity, AI, and full-stack web development. Actively building projects and open to tech internships.",
+  author: "Divyansh Nagar",
   type: "website",
-  ogImage: `${process.env.NEXT_PUBLIC_URL}/satnaing-dev-og-new.png`,
-  siteName: "Sat Naing",
-  imageAlt: "Sat Naing portfolio website",
+  ogImage: `${process.env.NEXT_PUBLIC_URL}/divyansh-nagar-dev-og-new.png`,
+  siteName: "Divyansh Nagar",
+  imageAlt: "Portfolio website of Divyansh Nagar",
 };
 
 const Home: NextPage<Props> = ({ blogPosts }) => {
   return (
     <>
       <AppHead
-        title="Sat Naing - A Full-stack Developer"
+        title="Divyansh Nagar - A Full-stack Developer"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />
-      <Loader>SatNaing.dev</Loader>
+      <Loader>Welcome !</Loader>
       <div className="bg-bglight dark:bg-bgdark overflow-hidden">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />

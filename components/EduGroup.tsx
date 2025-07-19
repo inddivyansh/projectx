@@ -7,6 +7,7 @@ type Props = {
     id: number;
     title: string;
     subTitle: string;
+    subTitleLink?: string;
     list: string[];
   };
 };
@@ -62,9 +63,21 @@ const EduGroup: React.FC<Props> = ({ edu }) => {
         </h3>
       </div>
       <div className="overflow-hidden">
-        <span className={`edu-info text-slate-500 dark:text-slate-200 italic`}>
-          {edu.subTitle}
-        </span>
+        <p className="edu-subtitle">
+          {edu.subTitleLink ? (
+            <a
+              href={edu.subTitleLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-inherit no-underline cursor-pointer"
+              style={{ textDecoration: "none" }}
+            >
+              {edu.subTitle}
+            </a>
+          ) : (
+            edu.subTitle
+          )}
+        </p>
       </div>
       <ul
         role="list"

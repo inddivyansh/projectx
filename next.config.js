@@ -16,7 +16,13 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: false,
   images: {
-    domains: ["res.cloudinary.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        // pathname: "/**" // Optional: restrict to certain paths
+      },
+    ],
   },
   compiler: {
     removeConsole: true,
