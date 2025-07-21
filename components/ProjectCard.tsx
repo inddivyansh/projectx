@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -14,6 +14,7 @@ type Props = {
     codeUrl: string;
     bgColor: string;
     githubApi: string;
+    glow: string;
   };
 };
 
@@ -92,18 +93,28 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
   }, [project.githubApi]);
 
   return (
-    <div ref={sectionRef} className={`md:basis-1/2 md:px-8 py-2 md:py-4`}>
-      <div className={`project-card project-card-${index}`}>
-        <div className="overflow-hidden">
+    <div ref={sectionRef} className="md:basis-1/2 md:px-8 py-2 md:py-4 flex">
+      <div
+        className={`project-card project-card-${index} 
+          bg-white dark:bg-carddark 
+          rounded-2xl border border-marrsgreen dark:border-transparent 
+          shadow-lg shadow-[0_0_40px_12px_rgba(56,189,248,0.30)] 
+          ${project.glow} transition-all duration-300
+          p-5 flex flex-col w-full
+          min-h-[420px] max-w-xl mx-auto`} // <-- min-h ensures equal height, max-w for consistency
+        style={{ minHeight: 420 }} // fallback for min-h in case of custom CSS
+      >
+        <div className="overflow-hidden rounded-xl mb-3">
           <div
-            className={`project-image ${project.bgColor} relative aspect-[16/9]`}
+            className={`project-image ${project.bgColor} relative aspect-[16/9] w-full h-44 sm:h-48 md:h-52`}
+            style={{ borderRadius: "0.75rem", overflow: "hidden" }}
           >
             {project.image}
           </div>
         </div>
         <div className="overflow-hidden">
           <div className="project-text flex items-center justify-between">
-            <h3 className=" text-marrsgreen dark:text-carrigreen text-lg my-1 font-medium">
+            <h3 className="text-marrsgreen dark:text-carrigreen text-lg my-1 font-medium">
               {project.title}
             </h3>
             <div className="flex items-center space-x-5 sm:space-x-3 my-2 sm:my-0 mr-[0.1rem]">
@@ -177,7 +188,7 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
           </div>
         </div>
         <div className="overflow-hidden">
-          <p className="project-desc">{project.desc}</p>
+          <p className="project-desc mb-2">{project.desc}</p>
         </div>
         <ul
           aria-label={`Tech Stack used in ${project.title}`}
@@ -186,12 +197,18 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
           {project.tags.map((tag) => (
             <li
               key={tag}
-              className={`project-tags mr-2 my-1 bg-[#E2EFEF] dark:bg-carddark py-1 px-2 rounded`}
+              className={`project-tags mr-2 my-1 
+        bg-[#E2EFEF] dark:bg-carddark 
+        border border-marrsgreen dark:border-gray-600
+        py-1 px-2 rounded`}
             >
               {tag}
             </li>
           ))}
         </ul>
+        <div className="mt-auto flex gap-2">
+          {/* Place your action buttons here */}
+        </div>
       </div>
     </div>
   );

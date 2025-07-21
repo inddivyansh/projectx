@@ -6,6 +6,8 @@ import LinkButton from "@/components/LinkButton";
 import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const ContactSection: React.FC = () => {
   const { theme } = useTheme();
@@ -23,13 +25,33 @@ const ContactSection: React.FC = () => {
     contactSection && onSectionChange!("contact");
   }, [contactSection]);
 
+  // Add background text effect (parallax) like HeroSection
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const q = gsap.utils.selector(sectionRef);
+    gsap.to(q(".bg-text"), {
+      scrollTrigger: {
+        trigger: q(".bg-text"),
+        scrub: true,
+      },
+      y: 350,
+    });
+  }, []);
+
   return (
     <section
       ref={sectionRef}
       id="contact"
-      className="section min-h-[700px] text-center"
+      className="section min-h-[700px] text-center relative"
     >
-      <div className="text-center">
+      {/* Background Text Effect */}
+      <span
+        aria-hidden="true"
+        className="bg-text absolute -top-36 left-0 right-0 mx-auto rotate-12 text-gray-100 dark:text-[#212f3c] text-7xl md:text-9xl scale-150 tracking-wide font-bold select-none pointer-events-none text-center z-0"
+      >
+        CREATE. CONNECT. INSPIRE.
+      </span>
+      <div className="text-center relative z-10">
         <RoughNotation
           type="underline"
           color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"}`}
@@ -40,7 +62,7 @@ const ContactSection: React.FC = () => {
           <h2 className="text-2xl inline-block my-6 font-medium">Contact</h2>
         </RoughNotation>
       </div>
-      <div className="mt-8 mb-20">
+      <div className="mt-8 mb-20 relative z-10">
         <h3 className="font-medium text-lg mb-2 md:text-3xl" ref={elementRef}>
           Let's be awesome together!
         </h3>
@@ -48,9 +70,9 @@ const ContactSection: React.FC = () => {
           I am driven by my love for coding and my desire for new
           challenges. If you have opportunities for collaboration, don't hesitate to contact me!
         </p>
-        <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
+        <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} className="text-blue-500 hover:underline">
           Get in touch!
-        </LinkButton>
+        </a>
       </div>
     </section>
   );

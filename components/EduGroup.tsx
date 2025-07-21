@@ -66,11 +66,10 @@ const EduGroup: React.FC<Props> = ({ edu }) => {
         <p className="edu-subtitle">
           {edu.subTitleLink ? (
             <a
-              href={edu.subTitleLink}
+              href={edu.subTitleLink || process.env.NEXT_PUBLIC_EDU_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="text-inherit no-underline cursor-pointer"
-              style={{ textDecoration: "none" }}
             >
               {edu.subTitle}
             </a>

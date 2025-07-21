@@ -95,11 +95,11 @@ fields:
   description: Tags for the post
 - name: author
   type: select
-  default: Sat Naing
+  default: Divyansh Nagar
   config:
     required: true
     options:
-    - Sat Naing
+    - Divyansh Nagar
     source:
       type: simple
       section: 

@@ -7,6 +7,9 @@ import Header from "@/components/Header";
 import SocialLinks from "@/components/SocialLinks";
 import HeroSection from "@/sections/HeroSection";
 import AboutSection from "@/sections/AboutSection";
+import SkillsSection from "@/sections/SkillsSection";
+import ExperiencesSection from "@/sections/ExperiencesSection";
+import AchievementsSection from "@/sections/AchievementsSection";
 import ProjectSection from "@/sections/ProjectSection";
 import BlogSection from "@/sections/BlogSection";
 import ContactSection from "@/sections/ContactSection";
@@ -33,7 +36,7 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
   return (
     <>
       <AppHead
-        title="Divyansh Nagar - A Full-stack Developer"
+        title="Divyansh Nagar - A Student Programmer"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />
@@ -45,6 +48,9 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
           <main id="main">
             <HeroSection />
             <AboutSection />
+            <SkillsSection />
+            <ExperiencesSection />
+            <AchievementsSection />
             <ProjectSection />
             <BlogSection posts={blogPosts} />
             <ContactSection />

@@ -2,18 +2,14 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
-
 import ProjectCard from "@/components/ProjectCard";
 import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
-
 import terminalPortfolio from "public/projects/terminal-portfolio.webp";
-import haruFashion from "public/projects/haru-fashion.webp";
-import haruApi from "public/projects/haru-api.webp";
-import astroPaper from "public/projects/astro-paper.webp";
-import nextBookstore from "public/projects/next-bookstore.webp";
-import shadcnAdmin from "public/projects/shadcn-admin.webp";
+import physicsSimulator from "public/projects/astro-paper.webp";
+import monumentDamageDetection from "public/projects/next-bookstore.webp";
+import finhub from "public/projects/shadcn-admin.webp";
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
@@ -53,7 +49,7 @@ const ProjectSection: React.FC = () => {
         ))}
       </div>
       <div className="others text-center mb-16">
-        Other projects can be explored in{" "}
+        Also checkout other projects on {" "}
         <a
           href="https://github.com/inddivyansh"
           className="font-medium underline link-outline text-marrsgreen dark:text-carrigreen whitespace-nowrap"
@@ -67,23 +63,64 @@ const ProjectSection: React.FC = () => {
 
 const projects = [
   {
-    title: "AstroPaper",
-    type: "Frontend",
+    title: "FinHub",
+    type: "Frontend + MCP Server + API",
     image: (
       <Image
-        src={astroPaper}
+        src={finhub}
         sizes="100vw"
         fill
-        alt="AstroPaper"
+        alt="FinHub"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "A minimal, accessible and SEO-friendly Astro blog theme. One of the most starred blog templates built with Astro.",
-    tags: ["Astro", "TypeScript", "React", "TailwindCSS"],
-    liveUrl: "https://astro-paper.pages.dev/",
-    codeUrl: "https://github.com/inddivyansh/",
+    desc: "A minimal, accessible and user-friendly UI for Stock Price Predictor Webapp. One of the most personalized stock market analysis tools using zerodha kite MCP Server and Gemini API.",
+    tags: ["AI", "JavaScript", "React", "MCP Server", "Gemini API","Python"],
+    liveUrl: "https://github.com/inddivyansh/AIpredictor",
+    codeUrl: "https://github.com/inddivyansh/AIpredictor",
     bgColor: "bg-[#9FD0E3]",
-    githubApi: "https://api.github.com/repos/satnaing/astro-paper",
+    githubApi: "https://api.github.com/repos/inddivyansh/AIpredictor",
+    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
+  },
+  {
+    title: "Physics Simulator",
+    type: "Physics + Machine Learning",
+    image: (
+      <Image
+        src={physicsSimulator}
+        sizes="100vw"
+        fill
+        alt="Emergent Physics Simulator"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "An Basic to advanced physics simulation tool leveraging machine learning, that uses fundamental concepts like navier stokes equation etc to help make sense of chaos theory, diffusion eqautions. This may help us discove the unknown with thee help of neural networks.",
+    tags: ["AI", "Physics", "Machine Learning", "Gray-Scott Model", "Navier-Stokes", "Diffusion", "Neural Networks", "Chaos Theory", "Python"],
+    liveUrl: "https://github.com/inddivyansh/physics-simulator",
+    codeUrl: "https://github.com/inddivyansh/physics-simulator",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi: "https://api.github.com/repos/inddivyansh/physics-simulator",
+    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
+  },
+  {
+    title: "CNN- Based Monument Damage Detection",
+    type: "History + Machine Learning",
+    image: (
+      <Image
+        src={monumentDamageDetection}
+        sizes="100vw"
+        fill
+        alt="CNN- Based Monument Damage Detection"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "A deep learning model for detecting damage in historical monuments using CNNs. The model is trained on a dataset of images of monuments with varying degrees of damage.",
+    tags: ["AI", "History", "Machine Learning", "CNN", "Image Processing", "Python"],
+    liveUrl: "https://github.com/inddivyansh/",
+    codeUrl: "https://github.com/inddivyansh/",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi: "https://api.github.com/repos/inddivyansh/",
+    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
   },
   {
     title: "Terminal Portfolio",
@@ -103,82 +140,7 @@ const projects = [
     codeUrl: "https://github.com/inddivyansh/",
     bgColor: "bg-[#B4BEE0]",
     githubApi: "https://api.github.com/repos/satnaing/terminal-portfolio",
-  },
-  {
-    title: "Haru Fashion",
-    type: "Frontend",
-    image: (
-      <Image
-        src={haruFashion}
-        sizes="100vw"
-        fill
-        alt="Haru Fashion App"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
-    desc: "An ecommerce web application where users can browse various products, add to wishlist, add to cart, and make purchase. Available in English and Burmese languages.",
-    tags: ["NextJS", "TypeScript", "TailwindCSS", "ContextAPI"],
-    liveUrl: "https://haru-fashion.vercel.app/",
-    codeUrl: "https://github.com/inddivyansh/",
-    bgColor: "bg-[#A6CECE]",
-    githubApi: "https://api.github.com/repos/satnaing/haru-fashion",
-  },
-  {
-    title: "Haru API",
-    type: "Backend",
-    image: (
-      <Image
-        src={haruApi}
-        sizes="100vw"
-        fill
-        alt="Haru API"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
-    desc: "A RESTful API developed for Haru fashion ecommerce project. Include CRUD operations, authentication, authorization, forgot/reset password and full-text search.",
-    tags: ["ExpressJS", "TypeScript", "PostgreSQL", "Prisma"],
-    liveUrl: "https://satnaing.github.io/haru-api/",
-    codeUrl: "https://github.com/inddivyansh/",
-    bgColor: "bg-[#C5E4E7]",
-    githubApi: "https://api.github.com/repos/satnaing/haru-api",
-  },
-  {
-    title: "Next Bookstore",
-    type: "Frontend + HeadlessCMS",
-    image: (
-      <Image
-        src={nextBookstore}
-        sizes="100vw"
-        fill
-        alt="Next Bookstore"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
-    desc: "An online bookstore developed using NextJS 13 with appDir and StrapiCMS.",
-    tags: ["NextJS", "Radix UI ", "TailwindCSS", "TanstackQuery", "StrapiCMS"],
-    liveUrl: "https://nextbookstore.vercel.app/",
-    codeUrl: "https://github.com/inddivyansh/",
-    bgColor: "bg-[#EBF4F4]",
-    githubApi: "https://api.github.com/repos/satnaing/next-bookstore",
-  },
-  {
-    title: "Shadcn Admin",
-    type: "Backend",
-    image: (
-      <Image
-        src={shadcnAdmin}
-        sizes="100vw"
-        fill
-        alt="Shadcn Admin"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
-    desc: "Admin Dashboard UI built with Shadcn and Vite. Built with responsiveness and accessibility in mind.",
-    tags: ["ShadcnUI", "Vite", "React Router", "TypeScript"],
-    liveUrl: "https://shadcn-admin.netlify.app/",
-    codeUrl: "https://github.com/inddivyansh/",
-    bgColor: "bg-[#FBFBFB]",
-    githubApi: "https://api.github.com/repos/satnaing/shadcn-admin",
+    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
   },
 ];
 

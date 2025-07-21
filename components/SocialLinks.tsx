@@ -1,11 +1,42 @@
+import { useEffect, useState } from "react";
 import { useSection } from "context/section";
 
 const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
+  const [hideLinks, setHideLinks] = useState(false);
+  const [slideOut, setSlideOut] = useState(false);
   const { currentSection } = useSection();
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSlideOut(true);
+          setTimeout(() => setHideLinks(true), 400); // 400ms slide duration
+        } else {
+          setHideLinks(false);
+          setSlideOut(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, []);
+
+  if (hideLinks) return null;
+
   return (
     <>
       {page === "index" ? (
-        <div className="hidden fixed left-10 bottom-1/3 md:flex flex-col w-6 h-52 items-center justify-between">
+        <div
+          className={`hidden fixed left-10 bottom-1/3 md:flex flex-col w-6 h-52 items-center justify-between transition-transform duration-400 ${
+            slideOut ? "translate-y-32 opacity-0" : "translate-y-0 opacity-100"
+          }`}
+        >
           {navLinks.map((nav) => {
             return (
               <a
@@ -22,7 +53,11 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
           })}
         </div>
       ) : (
-        <div className="hidden fixed left-10 bottom-0 md:flex flex-col w-6 h-56 items-center justify-between">
+        <div
+          className={`hidden fixed left-10 bottom-0 md:flex flex-col w-6 h-56 items-center justify-between transition-transform duration-400 ${
+            slideOut ? "translate-y-32 opacity-0" : "translate-y-0 opacity-100"
+          }`}
+        >
           <div className="-rotate-90 text-lg tracking-widest">
             <a
               href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
@@ -34,7 +69,11 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
           <div className="w-40 h-1 bg-bgdark dark:bg-bglight rotate-90"></div>
         </div>
       )}
-      <div className="hidden fixed right-10 bottom-0 md:flex flex-col w-6 h-[17rem] items-center justify-between">
+      <div
+        className={`hidden fixed right-10 bottom-0 md:flex flex-col w-6 h-[17rem] items-center justify-between transition-transform duration-400 ${
+          slideOut ? "translate-y-32 opacity-0" : "translate-y-0 opacity-100"
+        }`}
+      >
         <div className="flex flex-col space-y-6">
           {socialLinks.map((social) => (
             <a
@@ -56,7 +95,7 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
 const socialLinks = [
   {
     id: 1,
-    title: "GitHub Profile",
+    title: "Divyansh Nagar's Github",
     link: process.env.NEXT_PUBLIC_GITHUB_URL,
     svg: (
       <svg
@@ -91,7 +130,40 @@ const socialLinks = [
   },
   {
     id: 3,
-    title: "Check Sat Naing on Dev.to",
+    title: "Divyansh Nagar's Profile on Unstop",
+    link: process.env.NEXT_PUBLIC_UNSTOP_URL,
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+      >
+        <defs>
+          <mask id="unstopTextMask">
+            <rect width="24" height="24" fill="white" />
+            <text
+              x="12"
+              y="12"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="9"
+              font-weight="bold"
+              text-anchor="middle"
+              dominant-baseline="central"
+              fill="black"
+            >
+              un
+            </text>
+          </mask>
+        </defs>
+        <circle cx="12" cy="12" r="12" mask="url(#unstopTextMask)" />
+      </svg>
+    ),
+  },
+  {
+    id: 4,
+    title: "Divyansh Nagar's Dev.to",
     link: process.env.NEXT_PUBLIC_DEVTO_URL,
     svg: (
       <svg
@@ -104,49 +176,28 @@ const socialLinks = [
       </svg>
     ),
   },
-  {
-  id: 4,
-  title: "Divyansh Nagar's Profile on Unstop",
-  link: process.env.NEXT_PUBLIC_UNSTOP_URL,
-  svg: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
-    >
-      <defs>
-        <mask id="unstopTextMask">
-          <rect width="24" height="24" fill="white" />
-          <text
-            x="12"
-            y="12"
-            font-family="Arial, Helvetica, sans-serif"
-            font-size="9"
-            font-weight="bold"
-            text-anchor="middle"
-            dominant-baseline="central"
-            fill="black"
-          >
-            un
-          </text>
-        </mask>
-      </defs>
-      <circle cx="12" cy="12" r="12" mask="url(#unstopTextMask)" />
-    </svg>
-  ),
-},
 ];
 
 const navLinks = [
   {
-    url: "#",
-    text: "Welcome",
+    url: "#home",
+    text: "Home",
   },
   {
     url: "#whoami",
-    text: "Who am i?",
+    text: "About Me",
+  },
+  {
+    url: "#skills",
+    text: "Skills",
+  },
+  {
+    url: "#experiences",
+    text: "Experiences",
+  },
+  {
+    url: "#achievements",
+    text: "Achievements",
   },
   {
     url: "#projects",
@@ -156,6 +207,7 @@ const navLinks = [
     url: "#blog",
     text: "Blog",
   },
+  
   {
     url: "#contact",
     text: "Contact",
