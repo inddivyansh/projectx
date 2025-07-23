@@ -28,7 +28,7 @@ const ProjectSection: React.FC = () => {
 
   return (
     <section ref={sectionRef} id="projects" className="section">
-      <div className="project-title text-center">
+      <div className="project-title text-center pt-8">
         <RoughNotation
           type="underline"
           color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"}`}
@@ -39,17 +39,24 @@ const ProjectSection: React.FC = () => {
           <h2 className="section-heading">Featured Projects</h2>
         </RoughNotation>
       </div>
-      <span className="project-desc text-center block mb-4" ref={elementRef}>
-        “Talk is cheap. Show me the code”? I got you. <br />
-        Here are some of my projects you shouldn't misss
+      <span className="project-desc text-center block mb-4 mt-4" ref={elementRef}>
+        “Transforming imagination into impactful solutions” <br />
+        Explore some of my featured projects below.
       </span>
-      <div className="flex flex-wrap">
+      <div
+        className="
+          grid gap-8 pb-8 px-2 md:px-0
+          grid-cols-[repeat(auto-fit,minmax(340px,1fr))]
+          justify-center
+          pt-4
+        "
+      >
         {projects.map((project, index) => (
           <ProjectCard key={project.title} index={index} project={project} />
         ))}
       </div>
-      <div className="others text-center mb-16">
-        Also checkout other projects on {" "}
+      <div className="others text-center mb-16 pt-2">
+        Also checkout other projects on{" "}
         <a
           href="https://github.com/inddivyansh"
           className="font-medium underline link-outline text-marrsgreen dark:text-carrigreen whitespace-nowrap"
@@ -65,82 +72,60 @@ const projects = [
   {
     title: "FinHub",
     type: "Frontend + MCP Server + API",
-    image: (
-      <Image
-        src={finhub}
-        sizes="100vw"
-        fill
-        alt="FinHub"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
-    desc: "A minimal, accessible and user-friendly UI for Stock Price Predictor Webapp. One of the most personalized stock market analysis tools using zerodha kite MCP Server and Gemini API.",
-    tags: ["AI", "JavaScript", "React", "MCP Server", "Gemini API","Python"],
-    liveUrl: "https://github.com/inddivyansh/AIpredictor",
+    image: "/projects/shadcn-admin.webp", // <-- fixed path
+    desc: "A minimal and user-friendly UI for Stock Price Predictor Webapp. One of the most personalized stock market analysis tools using Zerodha Kite MCP Server & Gemini API. Features AI-powered news analysis to extract information and predict market sentiment, helping users make informed investment decisions.",
+    tags: ["AI", "JavaScript", "React", "MCP Server", "Gemini API", "Python", "News Analysis", "Sentiment Analysis"],
+    liveUrl: "https://a-ipredictor.vercel.app/",
     codeUrl: "https://github.com/inddivyansh/AIpredictor",
     bgColor: "bg-[#9FD0E3]",
     githubApi: "https://api.github.com/repos/inddivyansh/AIpredictor",
-    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
+    glow: "shadow-[0_0_24px_2px_rgba(59,130,246,0.25)]",
+    accent: "#3B82F6",
   },
   {
     title: "Physics Simulator",
     type: "Physics + Machine Learning",
-    image: (
-      <Image
-        src={physicsSimulator}
-        sizes="100vw"
-        fill
-        alt="Emergent Physics Simulator"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
+    image: "/projects/astro-paper.webp", // <-- fixed path
     desc: "An Basic to advanced physics simulation tool leveraging machine learning, that uses fundamental concepts like navier stokes equation etc to help make sense of chaos theory, diffusion eqautions. This may help us discove the unknown with thee help of neural networks.",
-    tags: ["AI", "Physics", "Machine Learning", "Gray-Scott Model", "Navier-Stokes", "Diffusion", "Neural Networks", "Chaos Theory", "Python"],
-    liveUrl: "https://github.com/inddivyansh/physics-simulator",
+    tags: ["AI", "Physics", "Machine Learning", "Gray-Scott Model", "Navier-Stokes", "Python"],
+    liveUrl: "https://physicsworldsimulator.streamlit.app/",
     codeUrl: "https://github.com/inddivyansh/physics-simulator",
     bgColor: "bg-[#EBF4F4]",
     githubApi: "https://api.github.com/repos/inddivyansh/physics-simulator",
-    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
+    glow: "shadow-[0_0_24px_2px_rgba(251,191,36,0.25)]",
+    accent: "#FBBF24",
   },
   {
     title: "CNN- Based Monument Damage Detection",
     type: "History + Machine Learning",
-    image: (
-      <Image
-        src={monumentDamageDetection}
-        sizes="100vw"
-        fill
-        alt="CNN- Based Monument Damage Detection"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
+    image: "/projects/next-bookstore.webp",
     desc: "A deep learning model for detecting damage in historical monuments using CNNs. The model is trained on a dataset of images of monuments with varying degrees of damage.",
-    tags: ["AI", "History", "Machine Learning", "CNN", "Image Processing", "Python"],
-    liveUrl: "https://github.com/inddivyansh/",
+    tags: [
+      "AI",
+      "History",
+      "Machine Learning",
+      "CNN",
+      "Python",
+    ],
+    liveUrl: "https://strucinspect.com/en/technologies/damage-detection/",
     codeUrl: "https://github.com/inddivyansh/",
     bgColor: "bg-[#EBF4F4]",
     githubApi: "https://api.github.com/repos/inddivyansh/",
-    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
+    glow: "shadow-[0_0_24px_2px_rgba(236,72,153,0.25)]",
+    accent: "#EC4899",
   },
   {
-    title: "Terminal Portfolio",
+    title: "My Portfolio",
     type: "Frontend",
-    image: (
-      <Image
-        src={terminalPortfolio}
-        sizes="100vw"
-        fill
-        alt="Terminal Portfolio"
-        className="transition-transform duration-500 hover:scale-110 object-cover"
-      />
-    ),
-    desc: "My portfolio website in terminal version developed with React and TypeScript. ",
-    tags: ["React", "TypeScript", "Styled-Components"],
-    liveUrl: "https://terminal.satnaing.dev/",
-    codeUrl: "https://github.com/inddivyansh/",
+    image: "/projects/terminal-portfolio.webp", // <-- fixed path
+    desc: "A minimal and responsive portfolio website showcasing my projects, skills, and experiences. Built with Next.js, TypeScript, and Tailwind CSS. Features smooth animations, dark mode support, and a user-friendly interface.",
+    tags: [, "TypeScript", "Next.js", "Tailwind CSS", "GSAP", "Rough Notation"],
+    liveUrl: "https://diivyportfolio.vercel.app/",
+    codeUrl: "https://github.com/inddivyansh/projectx",
     bgColor: "bg-[#B4BEE0]",
-    githubApi: "https://api.github.com/repos/satnaing/terminal-portfolio",
-    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.15)]",
+    githubApi: "https://api.github.com/repos/inddivyansh/projectx",
+    glow: "shadow-[0_0_24px_2px_rgba(34,197,94,0.25)]",
+    accent: "#22C55E",
   },
 ];
 

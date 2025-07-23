@@ -9,14 +9,16 @@ import AboutBgSvg from "@/components/AboutBgSvg";
 // Achievement cards data
 const achievementCards = [
   {
+    // Trophy for JEE
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect x="4" y="8" width="16" height="8" rx="2" stroke="#38bdf8" strokeWidth="2" />
-        <text x="12" y="16" textAnchor="middle" fontSize="8" fill="#38bdf8" fontWeight="bold" fontFamily="Arial">JEE</text>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <ellipse cx="12" cy="20" rx="6" ry="2" fill="#60a5fa" fillOpacity="0.15"/>
+        <path d="M8 17h8M12 17v-2M7 6V8a5 5 0 0 0 10 0V6" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="4" y="3" width="16" height="5" rx="2.5" stroke="#60a5fa" strokeWidth="2" fill="#60a5fa" fillOpacity="0.15"/>
       </svg>
     ),
     title: "JEE",
-    subtitle: " Top 2.2%ile of Students",
+    subtitle: "Top 2.2%ile of Students",
     description: "Secured 97.81 %ile (All India Rank 25290, 6475 OBC) in JEE Mains and Qualified in JEE Advance with (8368 OBC Rank).",
     button: {
       text: "View Scorecard",
@@ -26,11 +28,12 @@ const achievementCards = [
     glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.4)]",
   },
   {
+    // Star for LeetCode
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L15 8H9L12 2Z" fill="#22c55e" />
-        <circle cx="12" cy="14" r="6" stroke="#22c55e" strokeWidth="2" />
-        <text x="12" y="18" textAnchor="middle" fontSize="8" fill="#22c55e" fontWeight="bold" fontFamily="Arial">LC</text>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <ellipse cx="12" cy="18" rx="7" ry="2.5" fill="#22c55e" fillOpacity="0.15"/>
+        <path d="M6 10a6 6 0 0 1 12 0c0 2-2 4-6 4s-6-2-6-4z" stroke="#22c55e" strokeWidth="2" fill="#22c55e" fillOpacity="0.15"/>
+        <rect x="8" y="14" width="8" height="5" rx="1.5" stroke="#22c55e" strokeWidth="2" fill="#22c55e" fillOpacity="0.15"/>
       </svg>
     ),
     title: "LeetCode",
@@ -44,9 +47,10 @@ const achievementCards = [
     glow: "shadow-[0_0_24px_2px_rgba(34,197,94,0.4)]",
   },
   {
+    // Chef hat for CodeChef
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8" stroke="#a855f7" strokeWidth="2" fill="#a855f7" />
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <polygon points="12,3 15,10 22,10 17,14 19,21 12,17 5,21 7,14 2,10 9,10" stroke="#a855f7" strokeWidth="2" fill="#a855f7" fillOpacity="0.15"/>
       </svg>
     ),
     title: "CodeChef",
@@ -60,11 +64,11 @@ const achievementCards = [
     glow: "shadow-[0_0_24px_2px_rgba(168,85,247,0.4)]",
   },
   {
+    // Medal for Codeforces
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#38bdf8" strokeWidth="2" />
-        <path d="M8 15l2-6 2 6" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="12" cy="17" r="1" fill="#38bdf8" />
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="16" r="6" stroke="#ec4899" strokeWidth="2" fill="#ec4899" fillOpacity="0.15"/>
+        <rect x="9" y="1" width="6" height="9" rx="3" stroke="#ec4899" strokeWidth="2" fill="#ec4899" fillOpacity="0.15"/>
       </svg>
     ),
     title: "Codeforces",
@@ -73,15 +77,17 @@ const achievementCards = [
     button: {
       text: "View Profile",
       href: process.env.NEXT_PUBLIC_CODEFORCES_URL,
-      color: "bg-blue-500",
+      color: "bg-pink-500",
     },
-    glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.4)]",
+    glow: "shadow-[0_0_24px_2px_rgba(236,72,153,0.4)]",
   },
   {
+    // Certificate for Contest
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#facc15" strokeWidth="2" />
-        <path d="M12 7v5l4 2" stroke="#facc15" strokeWidth="2" strokeLinecap="round" />
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <rect x="4" y="4" width="16" height="12" rx="2" stroke="#facc15" strokeWidth="2" fill="#facc15" fillOpacity="0.15"/>
+        <circle cx="12" cy="10" r="2" stroke="#facc15" strokeWidth="2" fill="#facc15" fillOpacity="0.3"/>
+        <path d="M8 16l2-2 2 2 2-2" stroke="#facc15" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
     title: "Contest_Name",
@@ -95,10 +101,11 @@ const achievementCards = [
     glow: "shadow-[0_0_24px_2px_rgba(253,224,71,0.4)]",
   },
   {
+    // Badge for Challenge
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#fb923c" strokeWidth="2" />
-        <circle cx="12" cy="12" r="5" stroke="#fb923c" strokeWidth="2" />
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8" stroke="#fb923c" strokeWidth="2" fill="#fb923c" fillOpacity="0.15"/>
+        <circle cx="12" cy="13" r="2" fill="#fb923c" fillOpacity="0.4"/>
       </svg>
     ),
     title: "Challenge_Name",
@@ -110,22 +117,6 @@ const achievementCards = [
       color: "bg-orange-500",
     },
     glow: "shadow-[0_0_24px_2px_rgba(251,146,60,0.4)]",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <polygon points="12,2 14,10 22,10 16,14 18,22 12,18 6,22 8,14 2,10 10,10" fill="#ec4899" />
-      </svg>
-    ),
-    title: "Hackathon_Name",
-    subtitle: "Position_Name",
-    description: "Finalist of Contest_Name Hackathon (top rank_name out of total_teams teams).",
-    button: {
-      text: "View Certificate",
-      href: process.env.NEXT_PUBLIC_HACKATHON_CERT_LINK,
-      color: "bg-pink-500",
-    },
-    glow: "shadow-[0_0_24px_2px_rgba(236,72,153,0.4)]",
   },
 ];
 
@@ -160,12 +151,11 @@ const AchievementsSection: React.FC = () => {
             order={1}
             show={isSecOnScreen}
           >
-            <h2 className="text-4xl inline-block my-6 font-medium">Achievements</h2>
+            <h2 className="text-4xl inline-block my-6 font-medium">Badges & Certificates</h2>
           </RoughNotation>
         </div>
         <div className="mt-8 mb-20">
           <h3 className="font-medium text-lg mb-2 md:text-3xl">
-            Badges & Certificates
           </h3>
           <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
             Highlights of key accomplishments & milestones from my technical journey.

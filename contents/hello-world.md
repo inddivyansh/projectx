@@ -4,7 +4,7 @@ description: How the Machine Learning Playground application was developed
 excerpt:
   An overview of the open-source Machine Learning Playground project, the technologies used,
   and key experiences during development.
-datetime: 2024-06-10T00:00:00.000+00:00
+datetime: 2025-06-10T23:27:00.000+05:30
 slug: how-i-made-ml-playground
 featured: true
 category: How Do I

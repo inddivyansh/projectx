@@ -9,55 +9,62 @@ import AboutBgSvg from "@/components/AboutBgSvg";
 // Demo experience cards data
 const experienceCards = [
   {
+    // Office briefcase for internship/corporate
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="7" width="18" height="10" rx="2" stroke="#38bdf8" strokeWidth="2" />
-        <path d="M7 7V5a5 5 0 0 1 10 0v2" stroke="#38bdf8" strokeWidth="2" />
+        <rect x="4" y="8" width="16" height="10" rx="2" stroke="#38bdf8" strokeWidth="2" fill="#38bdf8" fillOpacity="0.12"/>
+        <rect x="8" y="4" width="8" height="4" rx="1.5" stroke="#38bdf8" strokeWidth="2" fill="#38bdf8" fillOpacity="0.12"/>
+        <path d="M4 12h16" stroke="#38bdf8" strokeWidth="2" />
       </svg>
     ),
-    title: "Software Engineer Intern",
-    subtitle: "TechCorp Pvt Ltd",
-    duration: "May 2024 – July 2024",
-    description: "Worked on building scalable backend APIs and contributed to frontend features using React and Node.js.",
+    title: "Your_Intern_Position",
+    subtitle: "Company_Name",
+    duration: "Month_Year – Month_Year",
+    description: "Add_description_here",
     button: {
       text: "View Certificate",
-      href: process.env.NEXT_PUBLIC_TECHCORP_CERT_LINK,
+      href: process.env.NEXT_PUBLIC_YOUR_COMPANY_NAME_CERT_LINK,
       color: "bg-sky-500",
     },
     glow: "shadow-[0_0_24px_2px_rgba(56,189,248,0.4)]",
   },
   {
+    // Laptop for remote/tech work
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#facc15" strokeWidth="2" />
-        <path d="M8 15l4-8 4 8" stroke="#facc15" strokeWidth="2" strokeLinecap="round" />
+        <rect x="3" y="7" width="18" height="10" rx="2" stroke="#facc15" strokeWidth="2" fill="#facc15" fillOpacity="0.12"/>
+        <rect x="2" y="17" width="20" height="3" rx="1.5" stroke="#facc15" strokeWidth="2" fill="#facc15" fillOpacity="0.12"/>
+        <rect x="8" y="10" width="8" height="3" rx="1" fill="#facc15" fillOpacity="0.3"/>
       </svg>
     ),
-    title: "AI Research Intern",
-    subtitle: "AI Labs, University",
-    duration: "Jan 2024 – Apr 2024",
-    description: "Researched and implemented deep learning models for NLP tasks, focusing on transformers and RAG pipelines.",
+    title: "Your_Intern_Position",
+    subtitle: "Company_Name",
+    duration: "Month_Year – Month_Year",
+    description: "Add_description_here",
     button: {
       text: "View Letter",
-      href: process.env.NEXT_PUBLIC_AILABS_LETTER_LINK,
+      href: process.env.NEXT_PUBLIC_YOUR_COMPANY_NAME_LETTER_LINK,
       color: "bg-yellow-500 text-gray-900",
     },
     glow: "shadow-[0_0_24px_2px_rgba(253,224,71,0.4)]",
   },
   {
+    // Teamwork for collaborative/project work
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-        <rect x="4" y="4" width="16" height="16" rx="4" stroke="#fb923c" strokeWidth="2" />
-        <path d="M8 16l4-8 4 8" stroke="#fb923c" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="8" cy="10" r="3" stroke="#fb923c" strokeWidth="2" fill="#fb923c" fillOpacity="0.12"/>
+        <circle cx="16" cy="10" r="3" stroke="#fb923c" strokeWidth="2" fill="#fb923c" fillOpacity="0.12"/>
+        <rect x="4" y="16" width="16" height="4" rx="2" stroke="#fb923c" strokeWidth="2" fill="#fb923c" fillOpacity="0.12"/>
+        <path d="M12 13v3" stroke="#fb923c" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
-    title: "Cybersecurity Trainee",
-    subtitle: "SecureNet Solutions",
-    duration: "Aug 2023 – Dec 2023",
-    description: "Participated in penetration testing, vulnerability assessment, and security automation projects.",
+    title: "Your_Intern_Position",
+    subtitle: "Company_Name",
+    duration: "Month_Year – Month_Year",
+    description: "Add_description_here",
     button: {
       text: "View Experience",
-      href: process.env.NEXT_PUBLIC_SECURNET_EXP_LINK,
+      href: process.env.NEXT_PUBLIC_YOUR_COMPANY_NAME_EXPERIENCE_LINK,
       color: "bg-orange-500",
     },
     glow: "shadow-[0_0_24px_2px_rgba(251,146,60,0.4)]",
@@ -100,7 +107,6 @@ const ExperiencesSection: React.FC = () => {
         </div>
         <div className="mt-8 mb-20">
           <h3 className="font-medium text-lg mb-2 md:text-3xl">
-            Career Journey
           </h3>
           <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
             A timeline of my professional and internship experiences in tech.

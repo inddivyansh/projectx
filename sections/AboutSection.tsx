@@ -5,9 +5,8 @@ import { useTheme } from "next-themes";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { useSection } from "context/section";
-import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
+import { useSection } from "context/section";
 
 import satNaing from "../public/satnaing.webp";
 import AboutBgSvg from "@/components/AboutBgSvg";
@@ -15,89 +14,15 @@ import EduGroup from "@/components/EduGroup";
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isSecOnScreen = useOnScreen(sectionRef);
-
-  useEffect(() => {
-    const q = gsap.utils.selector(sectionRef);
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    // profile-picture
-    gsap.fromTo(
-      q(".profile-picture"),
-      {
-        x: -200,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: q(".profile-picture"),
-          start: "20% bottom",
-        },
-      }
-    );
-
-    const fromAnimation = {
-      y: 100,
-      opacity: 0,
-    };
-
-    const toAnimation = (triggerTarget: string) => ({
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: q(`.${triggerTarget}`),
-        start: "top bottom",
-      },
-    });
-
-    // about-intro
-    gsap.fromTo(q(".about-intro"), fromAnimation, toAnimation("about-intro"));
-
-    // edu-bg
-    gsap.fromTo(q(".edu-bg"), fromAnimation, toAnimation("edu-bg"));
-
-    // bg svg parallax effect
-    gsap.fromTo(
-      q(".bg-svg"),
-      { y: -80 },
-      {
-        scrollTrigger: {
-          trigger: q(".bg-svg"),
-          scrub: true,
-        },
-        y: 65,
-        duration: 3,
-      }
-    );
-
-    // image bg svg parallax effect
-    gsap.fromTo(
-      q(".img-svg"),
-      { y: -30 },
-      {
-        scrollTrigger: {
-          trigger: q(".img-svg"),
-          start: "80% 75%",
-          scrub: true,
-        },
-        y: 30,
-      }
-    );
-  }, []);
-
+  const isScrollActive = useScrollActive(sectionRef);
+  const { onSectionChange } = useSection();
   const { theme } = useTheme();
 
-  const eduRef = useRef<HTMLDivElement>(null);
-
-  // Set active link for about section
-  const aboutSection = useScrollActive(sectionRef);
-  const { onSectionChange } = useSection();
   useEffect(() => {
-    aboutSection ? onSectionChange!("who am i?") : onSectionChange!("");
-  }, [aboutSection, onSectionChange]);
+    if (isScrollActive) onSectionChange?.("about me");
+  }, [isScrollActive, onSectionChange]);
+
+  const isSecOnScreen = true; // Placeholder, replace with actual on-screen logic
 
   return (
     <div

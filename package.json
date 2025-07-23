@@ -11,6 +11,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "gray-matter": "^4.0.3",
     "gsap": "^3.11.4",
     "next": "^15.4.1",

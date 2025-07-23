@@ -1,33 +1,33 @@
 ---
-title: This is just a testing
-description: This is just an OG description
+title: Building My Portfolio Project
+description: An overview of my current portfolio project and its features
 excerpt:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel
-  fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities
-  morbi tempus.
-datetime: 2020-06-17T05:35:07.000+00:00
-featured: false
-category: Random
+  I'm currently developing a new portfolio project to showcase my skills, experience, and recent work. This project is designed to be modern, responsive, and easy to update, with a focus on clean design and smooth user experience. It includes sections for featured projects, a blog, and contact information.
+datetime: 2025-07-17T12:39:00.000+05:30
+featured: true
+category: Portfolio
 author: Divyansh Nagar
 type: article
-coverImage: "/projects/haru-api.webp"
-coverImageAlt: something
-coverImageWidth: "2725"
-coverImageHeight: "1400"
-ogImage: "/projects/haru-api.webp"
-ogImageAlt: something
+coverImage: "/projects/terminal-portfolio.webp"
+coverImageAlt: Portfolio Screenshot
+coverImageWidth: "1920"
+coverImageHeight: "1080"
+ogImage: "/projects/terminal-portfolio.webp"
+ogImageAlt: Portfolio Screenshot
 language: "English"
 ---
 
-## This is just a testing
+## My Portfolio Project
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+I'm currently working on a new portfolio website to highlight my development work and creative projects. The site is built using modern web technologies, with a focus on performance and accessibility. It features a dynamic project gallery, a blog for sharing insights, and a contact form for collaboration opportunities.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+### Key Features
 
-## Lorem Ipsum
+- **Responsive Design:** Optimized for all devices, ensuring a seamless experience on desktop and mobile.
+- **Project Showcase:** Interactive gallery to display my best work with detailed descriptions and visuals.
+- **Blog Section:** Space to share tutorials, project updates, and industry thoughts.
+- **Contact Form:** Easy way for visitors to reach out for freelance or collaboration.
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+I'm excited to keep improving the site and add new features as my portfolio grows.
 
-> Just a testing quote
+> Building this portfolio is a great way to reflect on my progress and share my journey with others.

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
@@ -9,9 +9,14 @@ import "../styles/globals.css";
 
 import gsap from "gsap";
 import Script from "next/script";
+import FloatingButtons from "@/components/FloatingButtons";
+import GeminiChatbot from "@/components/GeminiChatbot"; // Use correct import
+import Footer from "@/components/Footer"; // Import Footer if needed
 
 function MyApp({ Component, pageProps }: AppProps) {
   const cursorRef = useRef(null);
+  const footerRef = useRef<HTMLElement>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
@@ -37,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     document.addEventListener("mousedown", hideCursor);
     document.addEventListener("mouseup", showCursor);
   }, []);
+
   return (
     <>
       <Script
@@ -44,7 +50,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
-
       <Script id="google-analytics-script" strategy="lazyOnload">
         {`
         window.dataLayer = window.dataLayer || [];
@@ -66,6 +71,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ProvideFilter>
           <ProvideSection>
             <Component {...pageProps} />
+            <FloatingButtons
+              footerRef={footerRef}
+              onChatbotClick={() => setIsChatOpen(true)}
+            />
+            {isChatOpen && (
+              <GeminiChatbot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+            )}
+            <Footer ref={footerRef} />
           </ProvideSection>
         </ProvideFilter>
       </ThemeProvider>

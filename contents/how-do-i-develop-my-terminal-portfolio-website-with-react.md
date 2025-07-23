@@ -1,7 +1,7 @@
 ---
 coverImageWidth: "1200"
 coverImageHeight: "700"
-datetime: 2022-06-09T03:42:51Z
+datetime: 2025-04-22T14:48:00.000+05:30
 tags:
   - Deep Learning
   - CNN

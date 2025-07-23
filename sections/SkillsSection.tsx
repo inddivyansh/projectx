@@ -194,7 +194,6 @@ const SkillsSection: React.FC = () => {
 			</div>
 			<div className="mt-8 mb-20">
 				<h3 className="font-medium text-lg mb-2 md:text-3xl">
-					My Tech Arsenal
 				</h3>
 				<p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
 					Languages, frameworks, databases, and tools I use for building and

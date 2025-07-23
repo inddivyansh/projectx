@@ -21,7 +21,7 @@ const BlogCardBox: React.FC<Props> = ({
   const { title, slug, excerpt, datetime } = post;
   return (
     <li
-      className={`blog-card-box sm:min-w-[17rem] bg-white dark:bg-carddark p-4 rounded-2xl border border-marrsgreen dark:border-transparent shadow-lg shadow-[0_0_40px_12px_rgba(56,189,248,0.22)] hover:shadow-xl transition-all duration-300 ${
+      className={`blog-card-box sm:min-w-[17rem] bg-white dark:bg-carddark p-4 rounded-2xl border border-marrsgreen dark:border-transparent shadow-[0_0_40px_12px_rgba(56,189,248,0.22)] hover:shadow-xl transition-all duration-300 ${
         fullWH ? "w-full" : "w-72 my-2"
       } ${className}`}
     >

@@ -14,6 +14,9 @@ import ProjectSection from "@/sections/ProjectSection";
 import BlogSection from "@/sections/BlogSection";
 import ContactSection from "@/sections/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
+import GeminiChatbot from "@/components/GeminiChatbot";
+import { useRef, useState } from "react";
 
 import { getAllPosts } from "utils/api";
 import { MdxMeta } from "../pages/blog/posts/[slug]";
@@ -33,6 +36,9 @@ export const meta = {
 };
 
 const Home: NextPage<Props> = ({ blogPosts }) => {
+  const footerRef = useRef<HTMLElement>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <>
       <AppHead
@@ -42,7 +48,7 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
       />
       <Loader>Welcome !</Loader>
       <div className="bg-bglight dark:bg-bgdark overflow-hidden">
-        <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
+        <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark pb-0">
           <SkipToMain />
           <Header />
           <main id="main">
@@ -56,7 +62,13 @@ const Home: NextPage<Props> = ({ blogPosts }) => {
             <ContactSection />
           </main>
           <SocialLinks page="index" />
-          <Footer />
+          <FloatingButtons
+            footerRef={footerRef}
+            onChatbotClick={() => setIsChatOpen(true)}
+          />
+          {isChatOpen && (
+            <GeminiChatbot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
+          )}
         </div>
       </div>
     </>

@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
 import { RoughNotation } from "react-rough-notation";
 import { useTheme } from "next-themes";
+import { useEffect, useRef } from "react";
 
-import LinkButton from "@/components/LinkButton";
+import LinkButton from "@/components/LinkButton"; 
 import { useSection } from "context/section";
 import useOnScreen from "hooks/useOnScreen";
 import useScrollActive from "hooks/useScrollActive";
@@ -40,8 +40,8 @@ const ContactSection: React.FC = () => {
 
   return (
     <section
-      ref={sectionRef}
       id="contact"
+      ref={sectionRef}
       className="section min-h-[700px] text-center relative"
     >
       {/* Background Text Effect */}
@@ -59,7 +59,7 @@ const ContactSection: React.FC = () => {
           order={1}
           show={isOnScreen}
         >
-          <h2 className="text-2xl inline-block my-6 font-medium">Contact</h2>
+          <h2 className="text-4xl inline-block my-6 font-medium">Contact</h2>
         </RoughNotation>
       </div>
       <div className="mt-8 mb-20 relative z-10">
@@ -70,9 +70,9 @@ const ContactSection: React.FC = () => {
           I am driven by my love for coding and my desire for new
           challenges. If you have opportunities for collaboration, don't hesitate to contact me!
         </p>
-        <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`} className="text-blue-500 hover:underline">
+        <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
           Get in touch!
-        </a>
+        </LinkButton>
       </div>
     </section>
   );
