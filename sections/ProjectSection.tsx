@@ -119,7 +119,7 @@ const projects = [
     type: "Frontend",
     image: "/projects/terminal-portfolio.webp", // <-- fixed path
     desc: "A minimal and responsive portfolio website showcasing my projects, skills, and experiences. Built with Next.js, TypeScript, and Tailwind CSS. Features smooth animations, dark mode support, and a user-friendly interface.",
-    tags: [, "TypeScript", "Next.js", "Tailwind CSS", "GSAP", "Rough Notation"],
+    tags: ["TypeScript", "Next.js", "Tailwind CSS", "GSAP", "Rough Notation"],
     liveUrl: "https://diivyportfolio.vercel.app/",
     codeUrl: "https://github.com/inddivyansh/projectx",
     bgColor: "bg-[#B4BEE0]",
